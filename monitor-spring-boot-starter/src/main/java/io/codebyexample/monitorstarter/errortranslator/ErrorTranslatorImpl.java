@@ -10,12 +10,12 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class ErrorTranslatorImpl implements ErrorTranslator {
 
-  private static String DEFAULT = "None";
+  private static String ERR_NONE = "None";
 
   @Override
   public String translate(Optional<Throwable> err) {
     if (!err.isPresent()) {
-      return "None";
+      return ERR_NONE;
     }
 
     return err.get().getClass().getSimpleName();

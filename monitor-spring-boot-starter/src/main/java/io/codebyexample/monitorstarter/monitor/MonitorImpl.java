@@ -57,7 +57,7 @@ public class MonitorImpl implements Monitor {
           .sla(monitorProperties.getSla())
           .register(getRegistry()));
     } catch (Exception ex) {
-      log.error("Error while recording performance metrics", ex);
+      log.error("Error while recording histogram metric", ex);
     }
   }
 
@@ -70,7 +70,7 @@ public class MonitorImpl implements Monitor {
           .register(getRegistry())
           .increment();
     } catch (Exception ex) {
-      log.error("Error while recording error metrics", ex);
+      log.error("Error while recording counter metric", ex);
     }
   }
 

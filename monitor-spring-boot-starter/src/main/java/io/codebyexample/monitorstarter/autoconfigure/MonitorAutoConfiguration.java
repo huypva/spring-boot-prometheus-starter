@@ -54,5 +54,4 @@ public class MonitorAutoConfiguration {
   public MetricAspectJ metricAspectJ(Monitor monitor) {
     return new MetricAspectJ(monitor);
   }
-
 }
