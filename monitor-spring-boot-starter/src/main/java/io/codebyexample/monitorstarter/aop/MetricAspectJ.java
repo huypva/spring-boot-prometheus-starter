@@ -30,7 +30,6 @@ public class MetricAspectJ {
 
   @Around("annotatedMetric(metric)")
   public Object around(ProceedingJoinPoint joinPoint, Metric metric) throws Throwable {
-    log.info("Process metric annotation 1.2");
     Timer.Sample timer = Timer.start();
     Optional<Throwable> err = Optional.empty();
 

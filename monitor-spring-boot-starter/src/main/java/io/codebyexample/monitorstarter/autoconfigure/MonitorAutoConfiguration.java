@@ -34,7 +34,6 @@ public class MonitorAutoConfiguration {
   public Monitor monitor(ApplicationContext applicationContext,
       MonitorProperties monitorProperties, MeterRegistry meterRegistry,
       ErrorTranslator errorTranslator) {
-    log.info("Init Monitor");
     return new MonitorImpl(applicationContext, monitorProperties, errorTranslator, meterRegistry);
   }
 
@@ -47,10 +46,10 @@ public class MonitorAutoConfiguration {
   @ConditionalOnMissingBean
   @Bean
   ErrorTranslator errorTranslator() {
-    log.info("Init ErrorTranslator");
     return new ErrorTranslatorImpl();
   }
 
+  @ConditionalOnMissingBean
   @Bean
   public MetricAspectJ metricAspectJ(Monitor monitor) {
     return new MetricAspectJ(monitor);

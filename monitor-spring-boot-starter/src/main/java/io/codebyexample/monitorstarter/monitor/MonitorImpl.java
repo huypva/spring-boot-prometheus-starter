@@ -38,7 +38,6 @@ public class MonitorImpl implements Monitor {
 
   @Override
   public void record(Metric metric, Timer.Sample timer, Optional<Throwable> err) {
-    log.info("Record 1");
     String baseMetricName = metric.value().isEmpty() ? "default_metric" : metric.value();
 
     if (metric.histogram()) {
