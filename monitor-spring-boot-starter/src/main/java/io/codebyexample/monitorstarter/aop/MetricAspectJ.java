@@ -24,11 +24,7 @@ public class MetricAspectJ {
   @Autowired
   private Monitor monitor;
 
-  @Pointcut("@annotation(metric)")
-  public void annotatedMetric(Metric metric) {
-  }
-
-  @Around("annotatedMetric(metric)")
+  @Around("@annotation(metric)")
   public Object around(ProceedingJoinPoint joinPoint, Metric metric) throws Throwable {
     Timer.Sample timer = Timer.start();
     Optional<Throwable> err = Optional.empty();
